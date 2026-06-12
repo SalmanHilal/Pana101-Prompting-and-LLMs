@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Prompting & LLMs — Salman Ahmed</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#0f172a; --bg2:#071124; --glass: rgba(255,255,255,0.06);
+      --muted: rgba(255,255,255,0.75);
+      --accent: linear-gradient(135deg,#7b61ff,#2bd0d0);
+    }
+    html,body{height:100%;}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      background: linear-gradient(180deg,var(--bg1) 0%, var(--bg2) 100%);
+      -webkit-font-smoothing:antialiased; color:#e6eef8;
+      display:flex; align-items:center; justify-content:center; padding:3rem 1rem;
+    }
+    .wrap{
+      width:100%; max-width:980px;
+    }
+    .glass{
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius:16px; padding:2rem; box-shadow: 0 6px 30px rgba(4,6,15,0.6);
+      backdrop-filter: blur(8px) saturate(120%);
+    }
+    header h1{font-weight:700; letter-spacing:-0.5px; font-size:1.9rem; margin-bottom:.2rem}
+    header .meta{color:var(--muted); font-weight:600}
+    hr.sep{border:none; height:1px; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.06),transparent); margin:1.25rem 0}
+    .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem}
+    .file-card{
+      position:relative; overflow:hidden; border-radius:12px; padding:1rem; display:flex; align-items:center; gap:1rem;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.03);
+      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .file-card:focus-within, .file-card:hover{transform:translateY(-6px); box-shadow:0 12px 30px rgba(11,18,40,0.6); border-color:rgba(255,255,255,0.08)}
+    .file-icon{width:56px; height:56px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.4rem}
+    .file-title{font-weight:600; color:#f3f8ff; margin:0; font-size:0.98rem}
+    .file-actions{margin-left:auto}
+    .btn-open{
+      background:var(--accent); background-size:200% 200%; color:#06111a; border:none; font-weight:700;
+      border-radius:10px; padding:0.5rem 0.9rem; box-shadow:0 6px 18px rgba(43,208,208,0.14);
+      transition:transform .15s ease, box-shadow .15s ease;
+    }
+    .btn-open.ppt{background:linear-gradient(135deg,#ffb86b,#ff6b6b); color:#081018}
+    .btn-play{background:linear-gradient(135deg,#00d4ff,#7b61ff); color:#06111a; border-radius:10px; padding:0.5rem 0.9rem; font-weight:700; border:none}
+    .btn-open:hover{transform:translateY(-3px); box-shadow:0 10px 22px rgba(123,97,255,0.14)}
+    .muted{color:rgba(230,238,248,0.8); font-size:.92rem}
+    footer{margin-top:1.25rem; text-align:center; color:rgba(230,238,248,0.7); font-size:.9rem}
+    @media (max-width:420px){ header h1{font-size:1.4rem} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <main class="glass" role="main" aria-labelledby="page-title">
+      <header class="text-center mb-3">
+        <h1 id="page-title">Prompting &amp; LLMs</h1>
+        <div class="meta">Salman Ahmed</div>
+        <div class="meta">Batch: Pana-A101-P011</div>
+        <hr class="sep" aria-hidden="true">
+      </header>
+
+      <section aria-labelledby="deliverables">
+        <h2 id="deliverables" class="muted" style="font-weight:700; margin-bottom:.75rem">Assignment Deliverables</h2>
+
+        <!-- Part 1: AI Prompting Lab Report -->
+        <div class="cards" role="list">
+          <article class="file-card" role="listitem">
+            <div class="file-icon bg-white text-danger" aria-hidden="true"><i class="fas fa-file-pdf"></i></div>
+            <div>
+              <p class="file-title">AI Prompting Lab Report</p>
+            </div>
+            <div class="file-actions">
+              <a class="btn-open" href="docs/AI Prompting Lab Report - Pana-101 - Salman Ahmed.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open AI Prompting Lab Report in new tab"><i class="fas fa-external-link-alt me-2"></i>Open</a>
+            </div>
+          </article>
+        </div>
+
+        <hr class="sep" aria-hidden="true" style="margin:1.5rem 0">
+
+        <!-- Part 2: Snake Game Development (Play + Report) -->
+        <div class="cards" role="list">
+          <article class="file-card" role="listitem">
+            <div class="file-icon bg-white text-success" aria-hidden="true"><i class="fas fa-gamepad"></i></div>
+            <div>
+              <p class="file-title">Snake Game Development</p>
+            </div>
+            <div class="file-actions" style="display:flex; gap:.5rem; align-items:center">
+              <a class="btn-play" href="https://snake-game-828664370629.asia-southeast1.run.app" target="_blank" rel="noopener noreferrer" aria-label="Play the Neon Snake Pro in new tab"><i class="fas fa-play me-2"></i>Play the Neon Snake Pro</a>
+              <a class="btn-open" href="docs/Snake Game Development Report - Salman Ahmed.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open Snake Game Development Report in new tab"><i class="fas fa-file-pdf me-2"></i>Open Report</a>
+            </div>
+          </article>
+        </div>
+
+        <hr class="sep" aria-hidden="true" style="margin:1.5rem 0">
+
+        <!-- Part 3: AI Presentation Report (PDF + PPTX) -->
+        <div class="cards" role="list">
+          <article class="file-card" role="listitem">
+            <div class="file-icon bg-white text-danger" aria-hidden="true"><i class="fas fa-file-pdf"></i></div>
+            <div>
+              <p class="file-title">AI Presentation Report</p>
+            </div>
+            <div class="file-actions" style="display:flex; gap:.5rem; align-items:center">
+              <a class="btn-open" href="docs/AI Presentation Report - Pana-101 - Salman Ahmed.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open AI Presentation Report in new tab"><i class="fas fa-file-pdf me-2"></i>Open Report</a>
+              <a class="btn-open ppt" href="https://docs.google.com/presentation/d/1nxYWx7sBruNwOWUVLKudkrQrbE-NM7hn8M7vn13KVPQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Open Agentic AI presentation in new tab"><i class="fas fa-file-powerpoint me-2"></i>Open PPTX</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer>
+        Salman Ahmed | Panaversity Course: AI-101
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // Accessibility: only make a card itself clickable if it contains a single action link.
+    document.querySelectorAll('.file-card').forEach(card => {
+      const links = Array.from(card.querySelectorAll('a'));
+      if (links.length === 1) {
+        const link = links[0];
+        card.tabIndex = 0;
+        card.setAttribute('role', 'button');
+        card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); link.click(); } });
+        card.addEventListener('click', e => { if (e.target.tagName !== 'A') link.click(); });
+      } else {
+        // ensure links are focusable and have visible focus styles (handled by browser/Bootstrap)
+      }
+    });
+  </script>
+</body>
+</html>
